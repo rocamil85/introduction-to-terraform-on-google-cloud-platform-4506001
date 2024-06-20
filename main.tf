@@ -1,7 +1,7 @@
 resource "google_dataflow_job" "big_data_job" {
   name              = "dataflow-job"
-  template_gcs_path = "gs://my-bucket/templates/template_file"
-  temp_gcs_location = "gs://my-bucket/tmp_dir"
+  template_gcs_path = "gs://bucket_dataflow_workbench/challenge_de"
+  temp_gcs_location = "gs://bucket_dataflow_workbench/challenge_der"
   parameters = {
     foo = "bar"
     baz = "qux"
