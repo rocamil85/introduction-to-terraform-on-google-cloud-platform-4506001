@@ -1,7 +1,20 @@
-resource "google_dataflow_job" "big_data_job" {
-  name              = "dataflow-job"
-  template_gcs_path = "gs://bucket_del_ron1/template_file"
-  temp_gcs_location = "gs://bucket_del_ron1/temp"  
+resource "google_storage_bucket" "static-site" {
+  name          = "image-store.com"
+  location      = "EU"
+  force_destroy = true
+
+  uniform_bucket_level_access = true
+
+  website {
+    main_page_suffix = "index.html"
+    not_found_page   = "404.html"
+  }
+  cors {
+    origin          = ["*"]
+    method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
+    response_header = ["*"]
+    max_age_seconds = 3600
+  }
 }
 
 data "google_compute_image" "ubuntu" {
