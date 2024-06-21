@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "static-site" {
-  name          = "image-store.com"
+  name          = "my-image-store-bucket"
   location      = "EU"
   force_destroy = true
 
