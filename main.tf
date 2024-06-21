@@ -6,6 +6,7 @@ resource "google_dataflow_job" "big_data_job" {
     foo = "bar"
     baz = "qux"
   }
+  region = "us-west1"
 }
 
 data "google_compute_image" "ubuntu" {
