@@ -1,20 +1,9 @@
-resource "google_storage_bucket" "static-site" {
-  name          = "my-image-store-bucket"
-  location      = "EU"
-  force_destroy = true
 
-  uniform_bucket_level_access = true
 
-  website {
-    main_page_suffix = "index.html"
-    not_found_page   = "404.html"
-  }
-  cors {
-    origin          = ["*"]
-    method          = ["GET", "HEAD", "PUT", "POST", "DELETE"]
-    response_header = ["*"]
-    max_age_seconds = 3600
-  }
+module "cloud-storage_example_simple_bucket" {
+  source  = "terraform-google-modules/cloud-storage/google//examples/simple_bucket"
+  version = "6.0.0"
+  project_id = "warehousev2-ce0-alas"
 }
 
 data "google_compute_image" "ubuntu" {
