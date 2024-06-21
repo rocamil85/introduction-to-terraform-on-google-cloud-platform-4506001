@@ -1,7 +1,7 @@
 resource "google_dataflow_job" "big_data_job" {
   name              = "dataflow-job"
-  template_gcs_path = "gs://bucket_dataflow_workbench/challenge_de/template_file"
-  temp_gcs_location = "gs://bucket_dataflow_workbench/temp"  
+  template_gcs_path = "gs://bucket_del_ron1/template_file"
+  temp_gcs_location = "gs://bucket_del_ron1/temp"  
 }
 
 data "google_compute_image" "ubuntu" {
